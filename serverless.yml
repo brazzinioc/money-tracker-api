@@ -1,0 +1,15 @@
+service: money-tracker-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-2
+
+functions:
+  get-categories:
+    handler: src/main.getCategories
+    events:
+      - httpApi:
+          path: /categories
+          method: GET
