@@ -11,5 +11,26 @@ functions:
     handler: src/main.getCategories
     events:
       - httpApi:
-          path: /categories
+          path: /v1/categories
+          method: GET
+
+  create-category:
+    handler: src/main.createCategory
+    events:
+      - httpApi:
+          path: /v1/categories
+          method: POST
+
+  get-subcategories:
+    handler: src/main.getSubcategories
+    events:
+      - httpApi:
+          path: /v1/subcategories
+          method: GET
+
+  get-movement-types:
+    handler: src/main.getMovementTypes
+    events:
+      - httpApi:
+          path: /v1/movement-types
           method: GET
